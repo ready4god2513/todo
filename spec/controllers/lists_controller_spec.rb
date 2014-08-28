@@ -42,6 +42,12 @@ describe ListsController do
 
     context 'authenticated' do
 
+      it 'has correct attributes', :focus do
+        item = lists.first
+        get :show, { id: item.id, format: :json }, { user_id: user.id }
+        expect(json['list']).to eq({id: item.id, name: item.name, sort_order: item.sort_order})
+      end
+
       it 'returns list' do
         get :show, { id: lists.first.id, format: :json }, { user_id: user.id }
         expect(response.status).to eq(200)

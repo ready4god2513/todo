@@ -37,6 +37,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'annotate', '~> 2.6.5'
+  gem 'jasmine'
 end
 
 group :test do

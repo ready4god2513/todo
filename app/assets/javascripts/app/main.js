@@ -1,3 +1,5 @@
+'use strict';
+
 modulejs.define('_', _);
 modulejs.define('Backbone', Backbone);
 

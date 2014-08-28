@@ -1,5 +1,14 @@
+'use strict';
+
 modulejs.define('models/todo', ['Backbone', '_'], function(Backbone, _){
 
-  console.log(Backbone);
+  var Todo = Backbone.Model.extend({
+    defaults: {
+      name: '',
+      completed: false
+    }
+  });
+
+  return Todo;
 
 });

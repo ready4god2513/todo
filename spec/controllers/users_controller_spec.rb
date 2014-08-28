@@ -32,6 +32,12 @@ describe UsersController do
     end
 
     context 'current user' do
+
+      it 'has correct attributes' do
+        get :show, {id: user.id, format: :json}, {user_id: user.id}
+        expect(json['user']).to eq({id: user.id, email: user.email}.with_indifferent_access)
+      end
+
       it 'returns user' do
         get :show, {id: user.id, format: :json}, {user_id: user.id}
         expect(response.status).to eq(200)

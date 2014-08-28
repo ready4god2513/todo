@@ -13,5 +13,5 @@
 //= require jquery
 //= require vendor/underscore
 //= require vendor/backbone
-//= require vendor/module_js
+//= require vendor/module
 //= require_tree .

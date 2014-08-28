@@ -13,11 +13,11 @@
 #  index_users_on_email  (email) UNIQUE
 #
 
-class User < ActiveRecord::Base
+FactoryGirl.define do
 
-  has_many :lists
-
-  has_secure_password
-  validates :email, presence: true, uniqueness: true
+  factory :user do
+    sequence(:email) { |n| "validemail+#{n}@example.com" }
+    password 'valid-password'
+  end
 
 end

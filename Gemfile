@@ -26,6 +26,8 @@ gem 'rails-html-sanitizer', '~> 1.0'
 gem 'unicorn'
 gem 'twitter-bootstrap-rails'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -37,7 +39,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'annotate', '~> 2.6.5'
-  gem 'jasmine'
 end
 
 group :test do

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.create(email: ENV['DEFAULT_USER_EMAIL'], password: ENV['DEFAULT_USER_PASSWORD'])
+
+2.times { |n| List.create(name: "My List #{n}", user: user) }

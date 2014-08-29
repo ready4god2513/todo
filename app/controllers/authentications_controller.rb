@@ -5,7 +5,7 @@ class AuthenticationsController < ApplicationController
       if authenticate_user && set_user_session
         format.json { render json: @user, status: 201 }
       else
-        format.json { render json: { error: 'Invalid username or password' }, status: 422 }
+        format.json { render json: { error: 'Invalid username or password ' }, status: 422 }
       end
     end
   end

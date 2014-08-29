@@ -2,11 +2,12 @@
 
 modulejs.define('_', _);
 modulejs.define('Backbone', Backbone);
+modulejs.define('jquery', $);
 
-modulejs.define('main', ['_', 'Backbone'], function(_, Backbone){
+modulejs.define('main', ['routers/main'], function(Router){
   return {
     start: function(){
-      modulejs.require('models/todo');
+      var router = new Router();
     }
   };
 });

@@ -1,8 +1,15 @@
 'use strict';
 
-modulejs.define('_', _);
+modulejs.define('_', function(){
+  return _;
+});
+
+modulejs.define('jquery', function(){
+  return jQuery;
+});
+
 modulejs.define('Backbone', Backbone);
-modulejs.define('jquery', $);
+
 
 modulejs.define('main', ['routers/main'], function(Router){
   return {

@@ -17,7 +17,6 @@ class AuthenticationsController < ApplicationController
     end
   end
 
-
   private
 
   def authenticate_user

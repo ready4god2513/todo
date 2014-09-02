@@ -1,6 +1,11 @@
 'use strict';
 
-modulejs.define('views/home', ['Backbone', '_', 'jquery'], function(Backbone, _, $){
+modulejs.define('views/home', [
+    'Backbone', 
+    '_', 
+    'jquery', 
+    'templates/home/index'
+  ], function(Backbone, _, $, HomeView){
 
   var HomeView = Backbone.View.extend({
 
@@ -9,7 +14,8 @@ modulejs.define('views/home', ['Backbone', '_', 'jquery'], function(Backbone, _,
     },
 
     render: function(){
-      console.log('got the home render');
+      var compiled = _.template('testing');
+      Backbone.$('#main').append(compiled());
     }
 
   });

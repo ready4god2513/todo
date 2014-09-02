@@ -1,6 +1,12 @@
 'use strict';
 
-modulejs.define('views/list', ['Backbone', 'jquery', 'collections/list'], function(Backbone, $, List){
+modulejs.define('views/list', [
+  '_',
+  'Backbone', 
+  'collections/list',
+  'templates/lists/index',
+  'templates/lists/single',
+  ], function(_, Backbone, List, ListIndex, ListSingleView){
 
   var ListView = Backbone.View.extend({
 
@@ -8,11 +14,13 @@ modulejs.define('views/list', ['Backbone', 'jquery', 'collections/list'], functi
       this.collection = new List();
       this.listenTo(this.collection, 'sync', this.render);
       this.collection.fetch();
+      Backbone.$('#main').html(ListIndex);
     },
 
     render: function(){
       this.collection.forEach(function(item){
-        console.log(item.get('name'));
+        var compiled = _.template(ListSingleView);
+        Backbone.$('#main .lists').append(compiled(item.attributes));
       });
     }
 
